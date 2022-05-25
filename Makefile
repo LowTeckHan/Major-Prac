@@ -3,17 +3,17 @@
 # clean: "make clean"
 
 CC = g++
-CFLAGS = -g -Wall
-H_FILES = Person.h User.h Book.h Librarian.h Databse.h
-CPP_FILES = Book.cpp Librarian.cpp Library.cpp Person.cpp User.cpp Main.cpp Database.cpp
+CFLAGS = -Wno-c++11-extensions
+H_FILES = Book.h Database.h Librarian.h Library.h Person.h User.h 
+CPP_FILES = Book.cpp Database.cpp Librarian.cpp Library.cpp Person.cpp User.cpp 
 
 all: run
 
 run: bulid
-	./bulid
+    ./bulid
 
 bulid: $(H_FILES) $(CPP_FILES)
-	$(CC) $(CFLAGS) $(CPP_FILES) -o bulid
+    $(CC) $(CFLAGS) $(CPP_FILES) Main.cpp -o bulid
 
 clean:
-	rm -f bulid
+    rm -f bulid
